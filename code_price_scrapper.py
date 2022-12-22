@@ -30,7 +30,9 @@ def get_code_price(url):
     """
     op = ChromeOptions()
     op.add_argument('headless')     # option to prevent browser opening
-    
+    # showing the path to the driver
+    driver = Chrome(executable_path='driver/chromedriver',options=op)
+    driver.get(url)     # accessing to url
     
     
     return code, price
