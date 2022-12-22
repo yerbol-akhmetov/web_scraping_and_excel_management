@@ -18,6 +18,25 @@ OUT_TEMPLATE= "TestTask_1_output_blank_template.xlsx"
 
 
 def excel_writer(filename, directory, items, key_headers):
+    """
+    This method writes item information to excel file
+
+    Parameters
+    ----------
+    filename : STRING (.xlsx)
+        Name of the output filename.
+    directory : STRING
+        Directory of output file.
+    items : LIST of OBJECTS
+        List of information about the items.
+    key_headers : LIST of STRING
+        Header names whose data will be written to excel file.
+
+    Returns
+    -------
+    None.
+
+    """
     
     # the content of output excel file
     out_df = excel_reader(filename=OUT_TEMPLATE, directory=directory)
