@@ -12,15 +12,16 @@ import os
 import pandas as pd
 
 
-# directory of excel datasheet
-FILENAME = "TestTask_1_input_1.xlsx"
-DIRECTORY = "./data"
-
-
 # function to read excel sheet and return Pandas dataframe
-def excel_reader():
+def excel_reader(filename, directory):
     """
     This function to read excel sheet and return Pandas dataframe
+    Parameters
+    ----------
+    filename : STRING
+        The name of the excel file.
+    directory: STRING
+        Directory of the excel file
 
     Returns
     -------
@@ -29,8 +30,8 @@ def excel_reader():
 
     """
     # joining directories to obtain full path
-    directory = os.path.join(DIRECTORY, FILENAME)
+    full_path = os.path.join(directory, filename)
     # reading excel file
-    content_df = pd.read_excel(directory, header=None)
+    content_df = pd.read_excel(full_path, header=None)
     
     return content_df
