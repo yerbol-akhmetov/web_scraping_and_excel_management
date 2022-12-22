@@ -16,14 +16,14 @@ def get_header_coord(content_df):
     Parameters
     ----------
     content_df : Pandas Dataframe
-        DESCRIPTION.
+        The input dataframe containing the excel sheet information.
 
     Returns
     -------
-    name_idx_list : list of coordinates of "Наименование" header for tables
-        DESCRIPTION.
-    url_idx_list : list of coordinates of "URL" header for tables
-        DESCRIPTION.
+    name_idx_list : LIST of TUPLES
+        (j, i) coordinates of "Наименование" header for tables.
+    url_idx_list : LIST of TUPLES
+        (j, i ) coordinates of "URL" header for tables.
 
     """
     name_idx_list = []  
