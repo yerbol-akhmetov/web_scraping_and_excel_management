@@ -9,11 +9,10 @@ Created on Thu Dec 22 13:22:08 2022
 import os
 import pandas as pd
 from header_coord_extractor import get_header_coord
+from excel_reader import excel_reader
 
 
-FILENAME = "TestTask_1_input_1.xlsx"
-DIRECTORY = "./data"
-content_df = pd.read_excel(os.path.join(DIRECTORY, FILENAME),header=None)
+content_df = excel_reader()
 
 print(get_header_coord(content_df))
 
