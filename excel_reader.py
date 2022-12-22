@@ -24,12 +24,13 @@ def excel_reader():
 
     Returns
     -------
-    content_df : TYPE
-        DESCRIPTION.
+    content_df : Pandas DataFrame
+        Pandas Dataframe containing content of excel sheet.
 
     """
-    
+    # joining directories to obtain full path
     directory = os.path.join(DIRECTORY, FILENAME)
-    
+    # reading excel file
+    content_df = pd.read_excel(directory, header=None)
     
     return content_df
