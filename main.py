@@ -23,11 +23,9 @@ OUT_FILENAME = "TestTask_1_output_1.xlsx"
 OUT_KEY_WORDS = ["наименование", "артикул", "ссылка", "цена"]
 
 
-
-if __name__ == "__main__":
-    
-    # extarcting content of excel file
-    content_df = excel_reader(filename=FILENAME, directory=DIRECTORY)
+def main_extractor(in_filename, in_dir, out_filename, out_dir):
+    # extarcting content of input excel file
+    content_df = excel_reader(filename=in_filename, directory=in_dir)
     # extracting "Наименование" and "URL" header coordinates
     name_coord_list, url_coord_list = get_header_coord(content_df)
     # obtaining list of objects containing information about items
@@ -35,6 +33,13 @@ if __name__ == "__main__":
     
     
     # writing the extracted data to output excel file
-    excel_writer(filename=OUT_FILENAME, directory=DIRECTORY, 
+    excel_writer(filename=out_filename, directory=out_dir, 
                  items=items, key_headers=OUT_KEY_WORDS)
+
+
+
+if __name__ == "__main__":
+    
+    main_extractor(in_filename=FILENAME, in_dir=DIRECTORY, 
+                   out_filename=OUT_FILENAME, out_dir=DIRECTORY)
     
