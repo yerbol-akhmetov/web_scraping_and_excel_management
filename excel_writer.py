@@ -39,7 +39,7 @@ def excel_writer(filename, directory, items, key_headers):
     """
     
     # the content of output excel file
-    out_df = excel_reader(filename=OUT_TEMPLATE, directory=directory)
+    out_df = excel_reader(filename=OUT_TEMPLATE, directory=DIRECTORY)
     # copying the headers from template
     full_path = os.path.join(directory, filename)
     writer = pd.ExcelWriter(full_path, engine='openpyxl')
